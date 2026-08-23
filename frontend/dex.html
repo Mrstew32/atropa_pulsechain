@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atropa DEX — PulseChain</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Ethers v6 CDN, same as the rest of the dashboard suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.0/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="glass-bg-container">
+        <header>
+            <div class="logo">
+                <span class="pulse-glow">ATROPA</span>
+                <span class="subtitle">DEX</span>
+            </div>
+            <div class="header-actions">
+                <a href="/index.html" class="btn btn-secondary">Dashboard</a>
+                <a href="/wallet.html" class="btn btn-secondary">Wallet Hub</a>
+                <a href="/docs.html" class="btn btn-secondary">Docs Hub</a>
+                <button class="btn btn-secondary" id="btnRefresh" type="button">Refresh</button>
+                <button class="btn btn-secondary" id="btnNetwork" type="button">PulseChain</button>
+                <div class="network-badge" id="networkBadge">Disconnected</div>
+                <button class="btn btn-connect" id="btnConnect" type="button">Connect Wallet</button>
+            </div>
+        </header>
+
+        <div class="dex-shell">
+            <!-- Wings: each group of tabs. Rendered from dex/registry.js. -->
+            <nav class="wing-rail" id="wingRail" aria-label="Contract wings"></nav>
+
+            <div class="dex-main">
+                <div class="wing-header">
+                    <h2 id="wingTitle">Dysnomia</h2>
+                    <p id="wingBlurb"></p>
+                </div>
+                <div class="tab-bar" id="tabBar" role="tablist"></div>
+                <div id="panelHost"></div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="terminal-header">
+                <h3>DEX Console</h3>
+                <button class="btn-clear" id="btnClearLogs" type="button">Clear</button>
+            </div>
+            <div class="terminal-body" id="dexConsole">
+                <div class="log-line info">Booting Atropa DEX…</div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="dex/boot.js"></script>
+</body>
+</html>
